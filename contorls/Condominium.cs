@@ -14,7 +14,8 @@ namespace CondominiumControls.contorls
     {
         public static List<Person> People = JsonToPersons.GetPersonsOrNewIEnumerableOfPersons().ToList();
         public static List<Property> Properties = JsonToProperties.GetPropertiesOrIEnumerableOfProperty().ToList();
-        public static List<Report> ReportsByPerson = JsonToReports.GetReportsOrIEnumerableOfReports(true).ToList();
-        public static List<Report> ReportsByProperty = JsonToReports.GetReportsOrIEnumerableOfReports(false).ToList();
+        public static List<ReportByPerson> ReportsByPerson = JsonToReports.GetReportsOrIEnumerableOfReportsByPerson().ToList();
+        public static List<ReportByProperty> ReportsByProperty = JsonToReports.GetReportsOrIEnumerableOfReportsByProperty().ToList();
     }
 }
+ 

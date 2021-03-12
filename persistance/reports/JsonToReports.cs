@@ -11,19 +11,31 @@ namespace CondominiumControls.persistance.reports
 {
     class JsonToReports
     {
-        public static IEnumerable<Report> GetReportsOrIEnumerableOfReports( bool isOwner )
+        public static IEnumerable<ReportByPerson> GetReportsOrIEnumerableOfReportsByPerson()
         {
-            var reports = new List<Report>();
-            string fileName = FileNames.ReportsByProperty;
-            if ( isOwner)
-            {
-                fileName = FileNames.ReportsByOwner;
-            }
+            var reports = new List<ReportByPerson>();
+            string fileName = FileNames.ReportsByOwner;
             if (File.Exists(fileName))
             {
                 using (StreamReader sr = new StreamReader(fileName))
                 {
-                    reports = JsonConvert.DeserializeObject<List<Report>>(sr.ReadToEnd());
+                    reports = JsonConvert.DeserializeObject<List<ReportByPerson>>(sr.ReadToEnd());
+                }
+            }
+
+            return reports;
+        }
+
+        public static IEnumerable<ReportByProperty> GetReportsOrIEnumerableOfReportsByProperty()
+        {
+            var reports = new List<ReportByProperty>();
+            string fileName = FileNames.ReportsByProperty;
+            
+            if (File.Exists(fileName))
+            {
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    reports = JsonConvert.DeserializeObject<List<ReportByProperty>>(sr.ReadToEnd());
                 }
             }
 
