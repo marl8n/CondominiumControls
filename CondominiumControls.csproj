@@ -65,6 +65,8 @@
     <Compile Include="persistance\person\PersonsToJson.cs" />
     <Compile Include="persistance\property\JsonToProperties.cs" />
     <Compile Include="persistance\property\PropertiesToJson.cs" />
+    <Compile Include="persistance\reports\JsonToReports.cs" />
+    <Compile Include="persistance\reports\ReportsToJson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
