@@ -57,6 +57,9 @@
     </Compile>
     <Compile Include="models\Person.cs" />
     <Compile Include="models\Property.cs" />
+    <Compile Include="models\Report.cs" />
+    <Compile Include="models\ReportByPerson.cs" />
+    <Compile Include="models\ReportByProperty.cs" />
     <Compile Include="persistance\FileNames.cs" />
     <Compile Include="persistance\person\JsonToPersons.cs" />
     <Compile Include="persistance\person\PersonsToJson.cs" />
