@@ -11,13 +11,9 @@ namespace CondominiumControls.persistance.reports
 {
     class ReportsToJson
     {
-        public static void save(IEnumerable<Report> reports, bool isOwner)
+        public static void SaveReportsByPerson(IEnumerable<ReportByPerson> reports)
         {
-            string fileName = FileNames.ReportsByProperty;
-            if ( isOwner )
-            {
-                fileName = FileNames.ReportsByOwner;
-            }
+            string fileName = fileName = FileNames.ReportsByOwner;
 
             if (File.Exists(fileName))
             {
@@ -29,5 +25,21 @@ namespace CondominiumControls.persistance.reports
                 sw.WriteAsync(JsonConvert.SerializeObject(reports));
             }
         }
+
+        public static void SaveReportsByProperty(IEnumerable<ReportByProperty> reports)
+        {
+            string fileName = fileName = FileNames.ReportsByProperty;
+
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.WriteAsync(JsonConvert.SerializeObject(reports));
+            }
+        }
+
     }
 }
